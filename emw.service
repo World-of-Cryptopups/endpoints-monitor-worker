@@ -1,0 +1,11 @@
+[Unit]
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+ExecStart=/root/endpoints-monitor-worker/emw
+WorkingDirectory=/root/endpoints-monitor-worker
+User=root
+Restart=always
+RestartSec=5
