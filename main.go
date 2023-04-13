@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
 	_ "github.com/joho/godotenv/autoload"
@@ -195,6 +194,5 @@ func main() {
 	// still not sure for testing implemention of p2p
 	// TODO:
 
-	c.Start()
-	fmt.Scanln()
+	c.Run()
 }
