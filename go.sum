@@ -1,4 +1,8 @@
-github.com/robfig/cron/v3 v3.0.0 h1:kQ6Cb7aHOHTSzNVNEhmp8EcWKLb4CbiMW9h9VyIhO4E=
-github.com/robfig/cron/v3 v3.0.0/go.mod h1:eQICP3HwyT7UooqI/z+Ov+PtYAWygg1TEWWzGIFLtro=
+github.com/deta/deta-go v1.0.0 h1:vg94dg2t7ChYhs8DEn4oXLzLAGGafgCSClHfMYrVFvY=
+github.com/deta/deta-go v1.0.0/go.mod h1:vbQaUT8iD6xREm816eNp7Nw1aewd95dpcb/uj0T2vuY=
+github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
+github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
 github.com/robfig/cron/v3 v3.0.1 h1:WdRxkvbJztn8LMz/QEvLN5sBU+xKpSqwwUO1Pjr4qDs=
 github.com/robfig/cron/v3 v3.0.1/go.mod h1:eQICP3HwyT7UooqI/z+Ov+PtYAWygg1TEWWzGIFLtro=
+github.com/tbdsux/reqgo v0.0.0-20230412130853-29beea9a3558 h1:3CfFRBXz9uBDcue1cY0hJkBmTL3y8dtNS+Xg/3nhbNc=
+github.com/tbdsux/reqgo v0.0.0-20230412130853-29beea9a3558/go.mod h1:6wP6KnsFZIBV37SJj6EZAWLa+p6eZz3DTSRW9eTJ+5A=
