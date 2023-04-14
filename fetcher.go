@@ -22,6 +22,14 @@ type FetchDataResponse struct {
 	Status string
 }
 
+var (
+	defaultOptions = &reqgo.Options{
+		Headers: map[string]string{
+			"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
+		},
+	}
+)
+
 func handleFetch(url, typ string, f func() (*reqgo.Response, error)) (FetchData, error) {
 	r, ms, err := timeFunc(f)
 
@@ -51,7 +59,7 @@ func fetchApiEndpoint(url string, typ string) (FetchData, error) {
 	finalUrl := fmt.Sprintf("%s/v1/chain/get_info", url)
 
 	return handleFetch(url, typ, func() (*reqgo.Response, error) {
-		r, err := reqgo.Post(finalUrl, nil)
+		r, err := reqgo.Post(finalUrl, defaultOptions)
 		if err != nil {
 			return nil, err
 		}
@@ -64,7 +72,7 @@ func fetchAtomicEndpoint(url string, typ string) (FetchData, error) {
 	finalUrl := fmt.Sprintf("%s/atomicassets/v1/config", url)
 
 	return handleFetch(url, typ, func() (*reqgo.Response, error) {
-		r, err := reqgo.Get(finalUrl, nil)
+		r, err := reqgo.Get(finalUrl, defaultOptions)
 		if err != nil {
 			return nil, err
 		}
@@ -75,7 +83,7 @@ func fetchAtomicEndpoint(url string, typ string) (FetchData, error) {
 
 func fetchGet(url, typ string) (FetchData, error) {
 	return handleFetch(url, typ, func() (*reqgo.Response, error) {
-		r, err := reqgo.Get(url, nil)
+		r, err := reqgo.Get(url, defaultOptions)
 		if err != nil {
 			return nil, err
 		}
@@ -88,6 +96,6 @@ func fetchHyperion(url, typ string) (FetchData, error) {
 	finalUrl := fmt.Sprintf("%s/v2/health", url)
 
 	return handleFetch(url, typ, func() (*reqgo.Response, error) {
-		return reqgo.Get(finalUrl, nil)
+		return reqgo.Get(finalUrl, defaultOptions)
 	})
 }
