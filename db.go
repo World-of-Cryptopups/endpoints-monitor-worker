@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/deta/deta-go/deta"
 	"github.com/deta/deta-go/service/base"
 )
@@ -27,6 +29,8 @@ func handleFetcher(eUrl string, typ string, fetcher func(string, string) (FetchD
 // dbName is report type [account_http, account_https, api_http,...]
 func saveData(f FetchData, dbName string) error {
 	db := getDB(dbName)
+
+	f.Key = fmt.Sprintf("%d_%s", f.DateTime, f.Url)
 
 	_, err := db.Put(&f)
 	return err

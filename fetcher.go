@@ -8,6 +8,7 @@ import (
 )
 
 type FetchData struct {
+	Key      string            `json:"key"`
 	Url      string            `json:"url"`
 	MS       int64             `json:"ms"`
 	Response FetchDataResponse `json:"response"`
@@ -18,8 +19,8 @@ type FetchData struct {
 }
 
 type FetchDataResponse struct {
-	Code   int
-	Status string
+	Code   int    `json:"code"`
+	Status string `json:"status"`
 }
 
 var (
@@ -59,7 +60,7 @@ func fetchApiEndpoint(url string, typ string) (FetchData, error) {
 	finalUrl := fmt.Sprintf("%s/v1/chain/get_info", url)
 
 	return handleFetch(url, typ, func() (*reqgo.Response, error) {
-		r, err := reqgo.Post(finalUrl, defaultOptions)
+		r, err := reqgo.Get(finalUrl, defaultOptions)
 		if err != nil {
 			return nil, err
 		}
